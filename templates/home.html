@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pdf Maker and Merger</title>
 </head>
 <body>
-    
+    <h1>Pdf Utility</h1>
+    <form action="/merge" enctype="multipart/form-data" method="post" >
+        <label for="select_pdf">Select PDF Files:</label>
+        <input type="file" id="select_pdf" name="pdf" multiple accept=".pdf">
+        <br><br>
+        <label for="output_name">Output Filename:</label>
+        <input type="text" id="output_name" name="output" placeholder="enter output filename" required>
+        <button type="submit" > Merge and Download</button>
+    </form>
 </body>
 </html>

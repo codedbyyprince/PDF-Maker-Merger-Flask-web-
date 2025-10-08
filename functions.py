@@ -1,12 +1,15 @@
 from pypdf import PdfWriter
+import io
+
 
 # pdf mergin function completed
-def merge(pdfs, output):
+def merge(pdfs):
     pdfwriter = PdfWriter()
-    
+
     for pdf in pdfs:
         pdfwriter.append(pdf)
-    
-    with open(output,'wb') as f:
-        pdfwriter.write(f)
+    buffer = io.BytesIO()
 
+    pdfwriter.write(buffer)
+    buffer.seek(0)
+    return buffer
