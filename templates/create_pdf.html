@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Pdf</title>
 </head>
-<body>
-    <h1>Hello </h1>
-</body>
+    <h1>Pdf Merger</h1>
+    <form action="/create" enctype="multipart/form-data" method="post">
+
+        <label for="select_files">Select files:</label>
+        <input type="file" id="select_files" name="files" multiple accept=".png, .jpg, .jpeg">
+        <br><br>
+        <label for="output_name">Output Filename:</label>
+        <input type="text" id="output_name" name="output" placeholder="enter output filename" required>
+        <button type="submit" > Create and Download</button>
+    </form>
 </html>

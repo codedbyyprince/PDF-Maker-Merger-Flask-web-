@@ -1,4 +1,6 @@
+# functiosn.py
 from pypdf import PdfWriter
+import  img2pdf
 import io
 
 
@@ -11,5 +13,11 @@ def merge(pdfs):
     buffer = io.BytesIO()
 
     pdfwriter.write(buffer)
+    buffer.seek(0)
+    return buffer
+
+def create(pdfs):
+    pdf = img2pdf.convert([file.stream for file in pdfs])
+    buffer = io.BytesIO(pdf)
     buffer.seek(0)
     return buffer
