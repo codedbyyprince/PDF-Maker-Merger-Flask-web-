@@ -8,6 +8,15 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+
+@app.route('/merge_pdf')
+def merge_page():
+    return render_template('merge_pdf.html')
+
+@app.route('/create_pdf')
+def create_page():
+    return render_template('create_pdf.html')
+
 @app.route('/merge', methods=['POST'])
 def merge_pdf():
     if request.method == 'POST':
@@ -24,6 +33,7 @@ def merge_pdf():
             mimetype='application/pdf',
             as_attachment=True,
         )
+
 
 if __name__ == '__main__':
     app.run(debug=True)
