@@ -17,19 +17,18 @@ def merge_page():
 @app.route('/merge', methods=['POST'])
 def merge_pdf():
     if request.method == 'POST':
-        pdf_files = request.files.getlist('pdf')
+        pdf_files = request.files.getlist('files')
         output = request.form['output']
-        
-        # 1. This variable holds the BytesIO object (the merged PDF)
+        if not output.lower().endswith('.pdf'):
+            output += '.pdf'
         merged_pdf = merge(pdfs=pdf_files) 
-        
         return send_file(
-            # 2. FIX: Use the variable that holds the merged data (meged_pdf)
             merged_pdf, 
             download_name=output,
             mimetype='application/pdf',
             as_attachment=True,
         )
+
 
 @app.route('/create_pdf')
 def create_page():
@@ -40,10 +39,10 @@ def create_pdf():
     if request.method == 'POST':
         pdf_files = request.files.getlist('files')
         output = request.form['output']
+        if not output.lower().endswith('.pdf'):
+            output += '.pdf'
         created_pdf =  create(pdf_files)
-        
         return send_file(
-            # 2. FIX: Use the variable that holds the merged data (meged_pdf)
             created_pdf, 
             download_name=output,
             mimetype='application/pdf',

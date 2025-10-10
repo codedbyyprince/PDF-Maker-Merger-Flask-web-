@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Pdf</title>
+    <title>Create PDF - PDF Utility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-    <h1>Pdf Merger</h1>
-    <form action="/create" enctype="multipart/form-data" method="post">
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-blue-400">PDF Utility</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="/merge" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Merge PDF</a>
+                    <a href="/create" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create PDF</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-        <label for="select_files">Select files:</label>
-        <input type="file" id="select_files" name="files" multiple accept=".png, .jpg, .jpeg">
-        <br><br>
-        <label for="output_name">Output Filename:</label>
-        <input type="text" id="output_name" name="output" placeholder="enter output filename" required>
-        <button type="submit" > Create and Download</button>
-    </form>
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full bg-gray-800 p-8 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold text-blue-400 mb-6 text-center">Create PDF</h1>
+            <form action="/create" enctype="multipart/form-data" method="post" class="space-y-6">
+                <div>
+                    <label for="select_files" class="block text-sm font-medium text-gray-300">Select Files (PNG, JPG, JPEG):</label>
+                    <input type="file" id="select_files" name="files" multiple accept=".png, .jpg, .jpeg" class="mt-1 block w-full text-gray-900 bg-gray-100 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="output_name" class="block text-sm font-medium text-gray-300">Output Filename:</label>
+                    <input type="text" id="output_name" name="output" placeholder="Enter output filename" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-gray-100 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transform transition hover:scale-105">
+                    Create and Download
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">PDF Utility - Simplify Your PDF Needs</p>
+        </div>
+    </footer>
+</body>
 </html>
