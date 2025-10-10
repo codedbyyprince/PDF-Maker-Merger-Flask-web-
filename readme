@@ -1,0 +1,95 @@
+🧩 PDF Maker & Merger (Flask Web App)
+
+A simple Flask web app that lets you merge PDFs and create new PDFs online.
+Built as part of my learning journey in Flask — this project focuses on understanding the core logic, file handling, and template rendering behind small but real-world web tools.
+
+🛠️ Features
+
+📂 Merge multiple PDF files into one
+
+📝 Create new PDFs from user input
+
+🧠 Simple and clean interface using Flask templates
+
+⚡ Fast and minimal — built for learning, not hype
+
+📁 Project Structure
+PDF-Maker-Merger-Flask-web-/
+│
+├── app.py              # Main Flask application
+├── functions.py        # Handles core PDF logic
+├── templates/          # Contains HTML templates
+│   ├── home.html
+│   ├── merge_pdf.html
+│   └── create_pdf.html
+├── static/             # (Optional) For CSS, JS, or assets
+├── requirements.txt    # Project dependencies
+└── Procfile (for Render deployment)
+
+🚀 Run Locally
+
+Clone the repository
+
+git clone https://github.com/codedbyyprince/PDF-Maker-Merger-Flask-web-.git
+cd PDF-Maker-Merger-Flask-web-
+
+
+Install dependencies
+
+pip install -r requirements.txt
+
+
+Run the app
+
+python app.py
+
+
+Open your browser and go to
+👉 http://127.0.0.1:5000
+
+🌐 Deploying to Render
+
+This project can be deployed easily on Render
+.
+
+Required files:
+
+requirements.txt
+
+Procfile with this line:
+
+web: gunicorn app:app
+
+
+(You can also add runtime.txt if you want a specific Python version.)
+
+💬 About This Project
+
+I’m currently learning Flask and building small practical tools to master:
+
+Backend routes
+
+File upload & handling
+
+Templating (Jinja2)
+
+Clean project structure
+
+Each project helps me understand a key part of web development.
+Something bigger and more advanced is coming soon — this is just one step in the climb.
+
+🧑‍💻 Author
+
+Prince
+
+Beginner Python & Flask Developer
+
+Learning Data Science, ML, and Web Development
+
+Building real projects to grow from fundamentals upward
+
+“Small tools, real logic, and no shortcuts — that’s how mastery is built.”
+
+🪶 License
+
+This project is open-source. You’re free to explore, learn from it, and improve it — just give credit if you use it publicly.
